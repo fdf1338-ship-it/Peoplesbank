@@ -78,6 +78,20 @@
       padding: 10px 0; 
       border-bottom: 1px solid rgba(255,255,255,0.1); 
     }
+    .section { 
+      background: rgba(255,255,255,0.1); 
+      padding: 20px; 
+      border-radius: 8px; 
+      margin-bottom: 20px; 
+    }
+    .section h3 { margin-bottom: 15px; }
+    .legal { 
+      font-size: 12px; 
+      line-height: 1.5; 
+      color: #aaa; 
+      margin: 20px 0; 
+    }
+    .legal p { margin-bottom: 10px; }
     .footer { 
       text-align: center; 
       padding: 20px; 
@@ -85,6 +99,8 @@
       color: #aaa; 
       border-top: 1px solid #004d80; 
     }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; font-size: 14px; margin-bottom: 5px; color: #aaa; }
   </style>
 </head>
 <body>
@@ -100,6 +116,7 @@
       <p>Create your passcode:</p>
       <input type="password" id="pass">
       <button onclick="login()">Sign me up / Sign in</button>
+      <p class="legal">By clicking 'Sign me up / Sign in', you agree to our Terms of Service, Privacy Policy, Electronic Communications Agreement, and other legal terms. See below for details.</p>
     </div>
 
     <div class="dashboard" id="dashboard">
@@ -120,11 +137,134 @@
         <div class="transaction">Amazon Purchase -$127.99 <span style="float:right;">Jan 4</span></div>
         <div class="transaction">Grocery Store -$89.45 <span style="float:right;">Jan 3</span></div>
       </div>
+      <div class="section" id="credit-card-apply">
+        <h3>Apply for Credit Card</h3>
+        <p>Enjoy 1.5% cash back on all purchases. No annual fee. Apply now.</p>
+        <div class="form-group">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label for="ssn">SSN (Last 4 Digits)</label>
+          <input type="text" id="ssn" placeholder="••••">
+        </div>
+        <div class="form-group">
+          <label for="income">Annual Income</label>
+          <input type="number" id="income" placeholder="60000">
+        </div>
+        <div class="form-group">
+          <label for="employment">Employment Status</label>
+          <select id="employment">
+            <option>Employed</option>
+            <option>Self-Employed</option>
+            <option>Unemployed</option>
+            <option>Retired</option>
+          </select>
+        </div>
+        <button onclick="alert('Application submitted. We'll review and contact you soon.')">Apply Now</button>
+        <p class="legal">By applying, you authorize us to obtain your credit report and agree to our credit terms. See Credit Card Agreement below.</p>
+      </div>
+      <div class="section" id="debit-card">
+        <h3>Your Debit Card</h2>
+        <p>Debit Card Number: •••• 4567</p>
+        <p>Expiration: 12/29</p>
+        <p>CVV: •••</p>
+        <p>Activate or report lost/stolen cards in Settings.</p>
+      </div>
+      <div class="section" id="checking-accounts">
+        <h3>Checking Accounts</h3>
+        <p>Your checking account is FDIC insured up to $250,000. No monthly fees. Unlimited transactions.</p>
+        <p>Account Number: •••• 1029</p>
+        <p>Routing Number: 021000021</p>
+        <p>Balance: $2,847.32</p>
+      </div>
+      <div class="section" id="billing-addresses">
+        <h3>Billing Addresses</h3>
+        <div class="form-group">
+          <label for="street">Street Address</label>
+          <input type="text" id="street" placeholder="123 Main St">
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" id="city" placeholder="New York">
+        </div>
+        <div class="form-group">
+          <label for="state">State</label>
+          <input type="text" id="state" placeholder="NY">
+        </div>
+        <div class="form-group">
+          <label for="zip">ZIP Code</label>
+          <input type="text" id="zip" placeholder="10001">
+        </div>
+        <button onclick="alert('Billing address updated.')">Update Address</button>
+        <p class="legal">Your billing address is used for statement mailing and verification. We may verify it with credit bureaus.</p>
+      </div>
+      <div class="section" id="personal-information">
+        <h3>Personal Information</h3>
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob">
+        </div>
+        <div class="form-group">
+          <label for="ssn-full">SSN</label>
+          <input type="text" id="ssn-full" placeholder="XXX-XX-XXXX">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="(123) 456-7890">
+        </div>
+        <button onclick="alert('Personal information updated.')">Update Information</button>
+        <p class="legal">Your personal information is protected under our Privacy Policy. We may share it with affiliates or as required by law. See Privacy Policy below.</p>
+      </div>
+      <div class="section" id="customer-service">
+        <h3>Customer Service</h3>
+        <p>Need help? Call 1-800-TRUST-US (1-800-878-7887) or use live chat.</p>
+        <button onclick="alert('Live chat is currently unavailable. Please call customer service.')">Start Live Chat</button>
+        <p class="legal">Customer service is available 24/7. Calls may be monitored for quality and training purposes.</p>
+      </div>
+      <div class="section" id="legal-disclaimers">
+        <h3>Legal Disclaimers</h3>
+        <div class="legal">
+          <p>Privacy Policy: We collect your personal information to provide banking services. We do not sell your data. See full Privacy Policy for details on collection, use, and sharing of your information.</p>
+          <p>Terms of Service: By using this site, you agree to our Terms of Service, including fees, dispute resolution, and limitations of liability. Full terms available upon request.</p>
+          <p>FDIC Insurance: Deposits are insured by the Federal Deposit Insurance Corporation (FDIC) up to $250,000 per depositor per insured bank. For more information, visit www.fdic.gov.</p>
+          <p>Patriot Act Notice: Important information about procedures for opening a new account. To help the government fight the funding of terrorism and money laundering activities, Federal law requires all financial institutions to obtain, verify, and record information that identifies each person who opens an account. What this means for you: When you open an account, we will ask for your name, address, date of birth, and other information that will allow us to identify you. We may also ask to see your driver's license or other identifying documents.</p>
+          <p>E-Sign Consent: You agree to receive electronic communications, notices, and disclosures. You can withdraw consent at any time by contacting us.</p>
+          <p>Credit Reporting: We may report information about your account to credit bureaus. Late payments, missed payments, or other defaults on your account may be reflected in your credit report.</p>
+          <p>Equal Housing Lender: People Trust Bank is an Equal Housing Lender. We do not discriminate against any applicant on the basis of race, color, religion, national origin, sex, marital status, handicap, familial status, or receipt of public assistance income.</p>
+          <p>Member FDIC: People Trust Bank is a member of the FDIC.</p>
+          <p>Arbitration Agreement: You agree to resolve disputes through binding arbitration rather than court. See full Arbitration Agreement in Terms of Service.</p>
+          <p>Electronic Funds Transfer Disclosure: We provide electronic funds transfers (EFTs) for your account. See full EFT Disclosure for details on rights, liabilities, and error resolution.</p>
+          <p>Truth in Lending Disclosure: For credit products, we provide disclosures under the Truth in Lending Act (TILA) including APR, finance charges, amount financed, and total of payments. See product terms for full disclosure.</p>
+          <p>Funds Availability Policy: Deposits may not be available for immediate withdrawal. See full Funds Availability Policy for details on when funds are available.</p>
+          <p>Overdraft Protection: We offer overdraft protection services. See full Overdraft Protection Agreement for fees and terms.</p>
+          <p>Wire Transfer Policy: Wire transfers are subject to fees and cutoff times. See full Wire Transfer Policy for details.</p>
+          <p>Account Agreement: Your account is governed by our Account Agreement, which includes terms for fees, interest, and other conditions. Available upon request.</p>
+          <p>Consumer Reporting Agency Information: We may report information about your account to consumer reporting agencies. Late payments, missed payments, or other defaults on your account may be reflected in your consumer report.</p>
+          <p>USA PATRIOT Act: To help the government fight the funding of terrorism and money laundering activities, Federal law requires all financial institutions to obtain, verify, and record information that identifies each person who opens an account. What this means for you: When you open an account, we will ask for your name, address, date of birth, and other information that will allow us to identify you. We may also ask to see your driver's license or other identifying documents.</p>
+          <p>Electronic Signature Agreement: By using this site, you agree to use electronic signatures in place of ink signatures for all agreements and disclosures. You can withdraw consent by contacting us, but this may limit your access to services.</p>
+          <p>Security Statement: We use industry-standard encryption and security measures to protect your data. See full Security Statement for details on our practices and your responsibilities.</p>
+          <p>Accessibility Statement: People Trust Bank is committed to making our services accessible to all customers, including those with disabilities. We comply with WCAG standards. Contact us for accommodations.</p>
+          <p>Complaints and Disputes: If you have a complaint, contact us at 1-800-TRUST-US. We will investigate and respond within 30 days. For disputes, see Arbitration Agreement.</p>
+          <p>Fees and Charges: See full Fee Schedule for all account fees, including monthly maintenance, overdraft, wire transfer, and ATM fees.</p>
+          <p>Interest Rates: See full Interest Rate Disclosure for current APY on savings and checking accounts.</p>
+          <p>Consumer Privacy Notice: We collect nonpublic personal information about you from the following sources: information we receive from you on applications or other forms; information about your transactions with us or others; and information we receive from a consumer reporting agency. We do not disclose any nonpublic personal information about our customers or former customers to anyone, except as permitted by law.</p>
+          <p>Cookie Policy: We use cookies to improve your experience on our site. By using the site, you consent to our use of cookies. See full Cookie Policy for details.</p>
+          <p>Third-Party Links: This site may contain links to third-party websites. We are not responsible for the content or privacy practices of those sites. Use at your own risk.</p>
+          <p>Copyright Notice: All content on this site is copyright ©️ 2026 People Trust Bank. All rights reserved. Unauthorized use is prohibited.</p>
+          <p>Trademark Notice: People Trust Bank and related logos are trademarks of People Trust Bank. All rights reserved.</p>
+          <p>Disclaimer of Warranties: The site is provided "as is" without warranties of any kind, either express or implied.</p>
+          <p>Limitation of Liability: People Trust Bank is not liable for any indirect, incidental, special, or consequential damages arising from the use of this site.</p>
+          <p>Governing Law: This site is governed by the laws of the United States and the State of Delaware.</p>
+          <p>Changes to Legal Terms: We may update these terms at any time. Your continued use of the site constitutes acceptance of the changes.</p>
+          <p>Contact Information: People Trust Bank, 123 Bank St, Delaware, DE 19801. Phone: 1-800-TRUST-US. Email: support@peopletrust.com.</p>
+        </div>
+      </div>
     </div>
   </main>
 
   <div class="footer">
-    ©️ 2026 People Trust Bank. All rights reserved. Member FDIC. Equal Housing Lender.
+    ©️ 2026 People Trust Bank. All rights reserved. Member FDIC. Equal Housing Lender. See legal disclaimers above for full details.
   </div>
 
   <script type="module">
@@ -145,21 +285,19 @@
     const auth = getAuth(app);
 
     function login() {
-      let email = document.getElementById('email').value;
+      let email = document.getElementById('email').value.trim();
       let pass = document.getElementById('pass').value;
       if (email && pass) {
         createUserWithEmailAndPassword(auth, email, pass)
-          .then((userCredential) => {
-            showDashboard();
-          })
+          .then(() => showDashboard())
           .catch((error) => {
-            signInWithEmailAndPassword(auth, email, pass)
-              .then((userCredential) => {
-                showDashboard();
-              })
-              .catch((error) => {
-                alert("Error: " + error.message);
-              });
+            if (error.code === 'auth/email-already-in-use') {
+              signInWithEmailAndPassword(auth, email, pass)
+                .then(() => showDashboard())
+                .catch((err) => alert("Sign in error: " + err.message));
+            } else {
+              alert("Error: " + error.message);
+            }
           });
       } else {
         alert('Please fill both fields.');
